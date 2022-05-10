@@ -8,16 +8,11 @@ namespace Personalregister
 {
     internal class Personal
     {
-        public string förnamn;
-        public string efternamn;
-        public double lön;
+        private string förnamn;
+        private string efternamn;
+        private double lön;
 
-        public Personal(string förnamn, string efternamn, double lön)
-        {
-            this.förnamn = förnamn;
-            this.efternamn = efternamn;
-            this.lön = lön;
-        }
+        public Personal() { }
         public string Förnamn
         {
             get { return förnamn; }

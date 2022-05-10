@@ -31,17 +31,16 @@ while (run)
         case "2":
             Console.Clear();
             Console.WriteLine("Lägg till ny personal\n");
+            Personal nyPersonal = new Personal();
             Console.Write("Förnamn: ");
-            string förnamn = Console.ReadLine();
+            nyPersonal.Förnamn = "" + Console.ReadLine();
             Console.Write("Efternamn: ");
-            string efternamn = Console.ReadLine();
+            nyPersonal.Efternamn = "" + Console.ReadLine();
+            Console.Write("Lön (endast siffror): ");
             double lön = 0;
-            while (lön == 0)
-            {
-                Console.Write("Lön (endast siffror): ");
-                Double.TryParse(Console.ReadLine(), out lön);
-            }
-            personalregister.Add(new Personal(förnamn, efternamn, lön));
+            Double.TryParse(Console.ReadLine(), out lön);
+            nyPersonal.Lön = lön;
+            personalregister.Add(nyPersonal);
             break;
         case "3":
             run = false;
