@@ -18,7 +18,7 @@ while (run)
                 Console.WriteLine("Skriv ut personalregistret\n");
                 foreach (var personal in personalregister)
                 {
-                    Console.WriteLine(personal.Förnamn + " " + personal.Efternamn + ", " + personal.lön + "kr");
+                    Console.WriteLine(personal.Förnamn + " " + personal.Efternamn + ", " + personal.Lön + "kr");
                 }
             }
             else
