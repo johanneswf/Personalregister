@@ -33,8 +33,12 @@ while (run)
             string förnamn = Console.ReadLine();
             Console.Write("Efternamn: ");
             string efternamn = Console.ReadLine();
-            Console.Write("Lön: ");
-            Double.TryParse(Console.ReadLine(), out double lön);
+            double lön = 0;
+            while (lön == 0)
+            {
+                Console.Write("Lön (endast siffror): ");
+                Double.TryParse(Console.ReadLine(), out lön);
+            }
             personalregister.Add(new dynamic[] { förnamn, efternamn, lön });
             break;
         case "3":
