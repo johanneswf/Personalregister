@@ -1,4 +1,6 @@
-﻿List<dynamic[]> personalregister = new List<dynamic[]>();
+﻿using Personalregister;
+
+List<Personal> personalregister = new List<Personal>();
 bool run = true;
 while (run)
 {
@@ -14,9 +16,9 @@ while (run)
             if (personalregister.Count > 0)
             {
                 Console.WriteLine("Skriv ut personalregistret\n");
-                foreach (dynamic[] personal in personalregister)
+                foreach (var personal in personalregister)
                 {
-                    Console.WriteLine(personal[0] + " " + personal[1] + ", " + personal[2] + "kr");
+                    Console.WriteLine(personal.Förnamn + " " + personal.Efternamn + ", " + personal.lön + "kr");
                 }
             }
             else
@@ -39,10 +41,12 @@ while (run)
                 Console.Write("Lön (endast siffror): ");
                 Double.TryParse(Console.ReadLine(), out lön);
             }
-            personalregister.Add(new dynamic[] { förnamn, efternamn, lön });
+            personalregister.Add(new Personal(förnamn, efternamn, lön));
             break;
         case "3":
             run = false;
             break;
     }
+
+
 }
