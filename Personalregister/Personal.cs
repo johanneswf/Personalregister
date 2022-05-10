@@ -12,7 +12,6 @@ namespace Personalregister
         private string efternamn;
         private double lön;
 
-        public Personal() { }
         public string Förnamn
         {
             get { return förnamn; }
