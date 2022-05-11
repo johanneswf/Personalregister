@@ -18,7 +18,7 @@ while (run)
                 Console.WriteLine("Skriv ut personalregistret\n");
                 foreach (var personal in personalregister)
                 {
-                    Console.WriteLine(personal.Förnamn + " " + personal.Efternamn + ", " + personal.Lön + "kr");
+                    Console.WriteLine($"{personal.Förnamn} {personal.Efternamn}, {personal.Lön}kr");
                 }
             }
             else
@@ -32,20 +32,37 @@ while (run)
             Console.Clear();
             Console.WriteLine("Lägg till ny personal\n");
             Personal nyPersonal = new Personal();
-            Console.Write("Förnamn: ");
-            nyPersonal.Förnamn = "" + Console.ReadLine();
-            Console.Write("Efternamn: ");
-            nyPersonal.Efternamn = "" + Console.ReadLine();
-            Console.Write("Lön (endast siffror): ");
-            double lön = 0;
-            Double.TryParse(Console.ReadLine(), out lön);
-            nyPersonal.Lön = lön;
+            nyPersonal.Förnamn = ValideraSträng("Förnamn: ", "Personen behöver ett förnamn.");
+            nyPersonal.Efternamn = ValideraSträng("Efternamn: ", "Personen behöver ett efternamn.");
+            nyPersonal.Lön = ValideraDubbel("Lön: ", "Personen jobbar inte gratis.");
             personalregister.Add(nyPersonal);
             break;
         case "3":
             run = false;
             break;
     }
-
-
+    static string ValideraSträng(string buffer, string felmeddelande)
+    {
+        string valid;
+        do
+        {
+            Console.Write(buffer);
+            valid = Console.ReadLine();
+            if (valid == "") 
+                Console.WriteLine(felmeddelande);
+        } while (valid == "");
+        return valid;
+    }
+    static double ValideraDubbel(string buffer, string felmeddelande)
+    {
+        double valid;
+        do
+        {
+            Console.Write(buffer);
+            Double.TryParse(Console.ReadLine(), out valid);
+            if (valid == 0) 
+                Console.WriteLine(felmeddelande);
+        } while (valid == 0);
+        return valid;
+    }
 }
