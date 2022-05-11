@@ -8,24 +8,27 @@ namespace Personalregister
 {
     internal class Personal
     {
-        private string förnamn;
-        private string efternamn;
-        private double lön;
+        //private string förnamn;
+        //private string efternamn;
+        //private double lön;
 
-        public string Förnamn
-        {
-            get { return förnamn; }
-            set { förnamn = value; }
-        }
-        public string Efternamn
-        {
-            get { return efternamn; }
-            set { efternamn = value; }
-        }
-        public double Lön
-        {
-            get { return lön; }
-            set { lön = value; }
-        }
+        //public string Förnamn
+        //{
+        //    get { return förnamn; }
+        //    set { förnamn = value; }
+        //}
+        //public string Efternamn
+        //{
+        //    get { return efternamn; }
+        //    set { efternamn = value; }
+        //}
+        //public double Lön
+        //{
+        //    get { return lön; }
+        //    set { lön = value; }
+        //}
+        public string Förnamn { get; set; }
+        public string Efternamn { get; set; }
+        public double Lön  { get; set; }
     }
 }
