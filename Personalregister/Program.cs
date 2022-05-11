@@ -41,28 +41,29 @@ while (run)
             run = false;
             break;
     }
-    static string ValideraSträng(string buffer, string felmeddelande)
+}
+
+static string ValideraSträng(string buffer, string felmeddelande)
+{
+    string valid;
+    do
     {
-        string valid;
-        do
-        {
-            Console.Write(buffer);
-            valid = Console.ReadLine();
-            if (valid == "") 
-                Console.WriteLine(felmeddelande);
-        } while (valid == "");
-        return valid;
-    }
-    static double ValideraDubbel(string buffer, string felmeddelande)
+        Console.Write(buffer);
+        valid = Console.ReadLine();
+        if (valid == "")
+            Console.WriteLine(felmeddelande);
+    } while (valid == "");
+    return valid;
+}
+static double ValideraDubbel(string buffer, string felmeddelande)
+{
+    double valid;
+    do
     {
-        double valid;
-        do
-        {
-            Console.Write(buffer);
-            Double.TryParse(Console.ReadLine(), out valid);
-            if (valid == 0) 
-                Console.WriteLine(felmeddelande);
-        } while (valid == 0);
-        return valid;
-    }
+        Console.Write(buffer);
+        Double.TryParse(Console.ReadLine(), out valid);
+        if (valid == 0)
+            Console.WriteLine(felmeddelande);
+    } while (valid == 0);
+    return valid;
 }
