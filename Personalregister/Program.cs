@@ -32,38 +32,16 @@ while (run)
             Console.Clear();
             Console.WriteLine("Lägg till ny personal\n");
             Personal nyPersonal = new Personal();
-            nyPersonal.Förnamn = ValideraSträng("Förnamn: ", "Personen behöver ett förnamn.");
-            nyPersonal.Efternamn = ValideraSträng("Efternamn: ", "Personen behöver ett efternamn.");
-            nyPersonal.Lön = ValideraDubbel("Lön: ", "Personen jobbar inte gratis.");
+            string förnamn = Validering.ValideraSträng("Förnamn: ", "Personen behöver ett förnamn.");
+            nyPersonal.Förnamn = förnamn;
+            string efternamn = Validering.ValideraSträng("Efternamn: ", "Personen behöver ett efternamn.");
+            nyPersonal.Efternamn = efternamn;
+            double lön = Validering.ValideraDubbel("Lön: ", "Personen jobbar inte gratis.");
+            nyPersonal.Lön = lön;
             personalregister.Add(nyPersonal);
             break;
         case "3":
             run = false;
             break;
     }
-}
-
-static string ValideraSträng(string buffer, string felmeddelande)
-{
-    string valid;
-    do
-    {
-        Console.Write(buffer);
-        valid = Console.ReadLine();
-        if (valid == "")
-            Console.WriteLine(felmeddelande);
-    } while (valid == "");
-    return valid;
-}
-static double ValideraDubbel(string buffer, string felmeddelande)
-{
-    double valid;
-    do
-    {
-        Console.Write(buffer);
-        Double.TryParse(Console.ReadLine(), out valid);
-        if (valid == 0)
-            Console.WriteLine(felmeddelande);
-    } while (valid == 0);
-    return valid;
 }
