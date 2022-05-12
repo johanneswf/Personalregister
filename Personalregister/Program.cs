@@ -65,7 +65,6 @@ while (run)
             run = false;
             break;
         default:
-            Console.WriteLine("Nagivera menyn genom att trycka in den siffra som motsvarar det du vill utföra.");
             break;
     }
 }
