@@ -18,7 +18,7 @@ while (run)
                 Console.WriteLine("Skriv ut personalregistret\n");
                 foreach (var personal in personalregister)
                 {
-                    Console.WriteLine(personal.Förnamn + " " + personal.Efternamn + ", " + personal.Lön + "kr");
+                    Console.WriteLine($"{personal.Förnamn} {personal.Efternamn}, {personal.Lön}kr");
                 }
             }
             else
@@ -33,12 +33,11 @@ while (run)
             Console.WriteLine("Lägg till ny personal\n");
             Personal nyPersonal = new Personal();
             Console.Write("Förnamn: ");
-            nyPersonal.Förnamn = "" + Console.ReadLine();
+            nyPersonal.Förnamn = Console.ReadLine();
             Console.Write("Efternamn: ");
-            nyPersonal.Efternamn = "" + Console.ReadLine();
-            Console.Write("Lön (endast siffror): ");
-            double lön = 0;
-            Double.TryParse(Console.ReadLine(), out lön);
+            nyPersonal.Efternamn = Console.ReadLine();
+            Console.Write("Lön: ");
+            Double.TryParse(Console.ReadLine(), out double lön);
             nyPersonal.Lön = lön;
             personalregister.Add(nyPersonal);
             break;
