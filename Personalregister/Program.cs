@@ -6,9 +6,10 @@ bool run = true;
 while (run)
 {
     Console.Clear();
-    Console.WriteLine("1. Skriv ut personalregistret.");
-    Console.WriteLine("2. Lägg till ny personal");
-    Console.WriteLine("3. Avsluta");
+    Console.WriteLine("Personalregister");
+    Console.WriteLine("\t1. Skriv ut personalregistret.");
+    Console.WriteLine("\t2. Lägg till ny personal");
+    Console.WriteLine("\t3. Avsluta");
     Console.WriteLine();
     Console.Write("Val: ");
 
